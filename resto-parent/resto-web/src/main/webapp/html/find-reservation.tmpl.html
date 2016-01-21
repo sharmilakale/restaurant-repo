@@ -1,0 +1,13 @@
+<h2>Find Reservation details</h2>
+<form name="findReservationForm" novalidate>
+    <p></p>
+    <p>
+        <label for="reservationId">Reservation Id: </label>
+        <input type="text" id="reservationId" ng-model="findReservationVm.reservationId" ng-required="true"/>
+    </p>
+    <p>
+        <label></label>
+        <!--<button type="submit" class="btn btn-primary" id="btnFindReservation">Find Reservation</button>-->
+        <a ng-href="#/reservations/{{findReservationVm.reservationId}}" class="btn btn-primary">Find Reservation details</a>
+    </p>
+</form>

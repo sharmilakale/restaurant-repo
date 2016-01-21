@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="restaurant">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Draksha Restaurant Reservation System</title>
+    <!-- For mobile first approach-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link id="linkRoot" href="."/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="styles/styles.css"/>
+</head>
+<body class="body">
+<div class="container">
+    <header>
+        <div class="divTop">
+            <img class="image" src="images/Grapes-100.png"/>
+            <p class="logo">Draksha Grill</p>
+            <img class="image" src="images/Grapes-100.png"/>
+            <a href="https://www.facebook.com/helpcookinghealthrecipe/" class="fbLink">
+                <img src="images/facebook_Blue_icon.ico" alt="Facebook Link" class="image"/>
+            </a>
+        </div>
+        <nav class="navbar">
+            <div class="container" align="center">
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav clearFix menuFont menuUl" style="width: 80%">
+                        <li><a href="#/home">Home</a></li>
+
+                        <li class="dropdown menuFont active">
+                            <a href="#" data-toggle="dropdown">Reservations</a>
+                            <ul class="nav navbar-nav dropdown-menu subUl">
+                                <li class="dropdown"><a id="createReservationA" href="#/createReservation" data-toggle="dropdown"> Create reservation</a>
+                                </li>
+                                <li class="dropdown"><a id="findReservationA" href="#/findReservation" data-toggle="dropdown">Find Reservations</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown menuFont active">
+                            <a href="#" data-toggle="dropdown">Owner</a>
+                            <ul class="nav navbar-nav dropdown-menu subUl">
+                                <li class="dropdown"><a id="reservationListA" href="#/reservations" data-toggle="dropdown">Reservation List</a> </li>
+                                <li class="dropdown"><a id="tableListA" href="#/tableList" data-toggle="dropdown"> Table List</a>
+                                </li>
+                                <li class="dropdown"><a id="customerListA" href="#/customerList" data-toggle="dropdown">Customer List</a></li>
+                                <li class="dropdown"><a id="profileA" href="#/profiles/1" data-toggle="dropdown">Profile</a> </li>
+                            </ul>
+                        </li>
+                        <!--<li><a id="tableListA" href="#/tableList">Table List</a></li>-->
+                        <!--<li><a id="customerListA" href="#/customerList">Customer List</a></li>-->
+                        <!--<li><a id="profileA" href="#/profiles/1">Profile</a></li>-->
+                        <li><a id="aboutUsA" href="#/aboutUs">About Us</a></li>
+                        <li><a id="contactUsA" href="#/contactUs">Contact Us</a></li>
+                        <li><a id="loginA" href="#/login">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section ng-view>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2016 Egen Solutions, Inc.</p>
+    </footer>
+</div>
+
+<script src="https://code.angularjs.org/1.4.8/angular.js"></script>
+<script src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.4.8/angular-messages.js"></script>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
+
+
+<script src="scripts/app-module.js"></script>
+<script src="scripts/reservation-list.controller.js"></script>
+<script src="scripts/reservation-detail.controller.js"></script>
+<script src="scripts/create-reservation.controller.js"></script>
+<script src="scripts/find-reservation.controller.js"></script>
+<script src="scripts/table-list.controller.js"></script>
+<script src="scripts/customer-list.controller.js"></script>
+<script src="scripts/profile-setting.controller.js"></script>
+<script src="scripts/about-us.controller.js"></script>
+<script src="scripts/login.controller.js"></script>
+
+<script src="scripts/reservation.service.js"></script>
+<script src="scripts/jquery-1.11.3.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/scripts.js"></script>
+
+</body>
+</html>
+</html>
