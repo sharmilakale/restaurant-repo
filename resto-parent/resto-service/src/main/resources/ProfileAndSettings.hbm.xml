@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.egen.rest.domain.ProfileAndSettings" table="db_restaurant.restaurant_profile_settings">
+
+		<id name="restId" type="integer">
+			<column name="restId"/>
+			<generator class="native"></generator>
+		</id>
+		<property name="restName" type="string">
+			<column name="restName" length="45"/>
+		</property>
+		
+		<property name="tagLine" type="string">
+			<column name="tagLine" length="45"/>
+		</property>
+		<property name="addrLine1" type="string">
+			<column name="addrLine1" length="45"/>
+		</property>
+		
+		<property name="addrLine2" type="string">
+			<column name="addrLine2" length="45"/>
+		</property>
+		<property name="city" type="string">
+			<column name="city" length="20"/>
+		</property>
+		
+		<property name="state" type="string">
+			<column name="state" length="20"/>
+		</property>
+		<property name="zipCode" type="string">
+			<column name="zipCode" length="20"/>
+		</property>
+		
+		<property name="phone" type="string">
+			<column name="phone" length="20"/>
+		</property>
+		
+		<property name="email" type="string">
+			<column name="email" length="20"/>
+		</property>
+		<property name="autoAssign" type="boolean">
+			<column name="autoAssign" length="1"/>
+		</property>
+		<property name="openCloseDetails" type="string">
+			<column name="openCloseDetails" length="200"/>
+		</property>
+		<property name="mon" type="boolean">
+			<column name="mon" length="1"/>
+		</property>
+		<property name="monStart" type="string">
+			<column name="monStart" length="45"/>
+		</property>
+		<property name="monEnd" type="string">
+			<column name="monEnd" length="45"/>
+		</property>
+		<property name="tues" type="boolean">
+			<column name="tues" length="1"/>
+		</property>
+		<property name="tuesStart" type="string">
+			<column name="tuesStart" length="45"/>
+		</property>
+		<property name="tuesEnd" type="string">
+			<column name="tuesEnd" length="45"/>
+		</property>
+		<property name="wed" type="boolean">
+			<column name="wed" length="1"/>
+		</property>
+		<property name="wedStart" type="string">
+			<column name="wedStart" length="45"/>
+		</property>
+		<property name="wedEnd" type="string">
+			<column name="wedEnd" length="45"/>
+		</property>
+		<property name="thur" type="boolean">
+			<column name="thur" length="1"/>
+		</property>
+		<property name="thurStart" type="string">
+			<column name="thurStart" length="45"/>
+		</property>
+		<property name="thurEnd" type="string">
+			<column name="thurEnd" length="45"/>
+		</property>
+		<property name="fri" type="boolean">
+			<column name="fri" length="1"/>
+		</property>
+		<property name="friStart" type="string">
+			<column name="friStart" length="45"/>
+		</property>
+		<property name="friEnd" type="string">
+			<column name="friEnd" length="45"/>
+		</property>
+		<property name="sat" type="boolean">
+			<column name="sat" length="1"/>
+		</property>
+		<property name="satStart" type="string">
+			<column name="satStart" length="45"/>
+		</property>
+		<property name="satEnd" type="string">
+			<column name="satEnd" length="45"/>
+		</property>
+		<property name="sun" type="boolean">
+			<column name="sun" length="1"/>
+		</property>
+		<property name="sunStart" type="string">
+			<column name="sunStart" length="45"/>
+		</property>
+		<property name="sunEnd" type="string">
+			<column name="sunEnd" length="45"/>
+		</property>
+		
+	</class>
+</hibernate-mapping>

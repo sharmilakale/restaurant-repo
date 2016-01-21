@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.egen.rest.domain.TableDetails" table="db_restaurant.table_details">
+
+		<id name="tableId" type="integer">
+			<column name="table_id" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="capacity" type="integer">
+			<column name="capacity" not-null="true" />
+		</property>
+
+	</class>
+</hibernate-mapping>

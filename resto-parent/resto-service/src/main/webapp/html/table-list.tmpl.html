@@ -1,0 +1,28 @@
+<h2>Table List</h2>
+<input type="search" class="form-control" placeholder="Search text" ng-model="tableListVm.searchTxt">
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th ng-click="tableListVm.sortBy='tableNo'; tableListVm.sortOrder = !tableListVm.sortOrder;">Table No.</th>
+        <th ng-click="tableListVm.sortBy='tableCapacity'; tableListVm.sortOrder = !tableListVm.sortOrder;">Capacity</th>
+        <th ng-click="tableListVm.sortBy='id'; tableListVm.sortOrder = !tableListVm.sortOrder;">Confirmation Code</th>
+        <th ng-click="tableListVm.sortBy='reserveDate'; tableListVm.sortOrder = !tableListVm.sortOrder;">Date</th>
+        <th ng-click="tableListVm.sortBy='reserveTime'; tableListVm.sortOrder = !tableListVm.sortOrder;">Time</th>
+        <th ng-click="tableListVm.sortBy='status'; tableListVm.sortOrder = !tableListVm.sortOrder;">Status</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="tableDetail in tableListVm.tableList | filter:tableListVm.searchTxt | orderBy:tableListVm.sortBy:tableListVm.sortOrder">
+
+        <td>{{tableDetail.tableNo}}</td>
+        <td>{{tableDetail.tableCapacity}}</td>
+        <td><a ng-href="#/reservations/{{tableDetail.id}}">{{tableDetail.id}}<span class="glyphicon glyphicon-pencil"></span></a></td>
+        <td>{{tableDetail.reserveDate |date:yyyy-MM-dd}}</td>
+        <td>{{tableDetail.reserveTime}}</td>
+        <td>{{tableDetail.status}}</td>
+
+    </tr>
+    </tbody>
+</table>

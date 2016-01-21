@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Seating Map</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body>
+
+
+<a id="saveLink" href="#" onclick="save();">Save</a>
+<a id="editCancelLink" href="#" onclick="toggleMap();">Edit</a>
+
+<div id="displayFields">
+    <span>Rows: </span>
+    <input type="number" id="numberOfRowsInput" maxlength="1" style="width: 30px" min="1" max="9"
+           oninput="maxLengthCheck(this)">
+    <span id="numberOfRowsLabel" style="display: inline-block; width: 35px"></span>
+    <span>Tables Per Row: </span>
+    <input type="number" id="tablesPerRowInput" maxlength="1" style="width: 30px" min="1" max="9"
+           oninput="maxLengthCheck(this)">
+    <span id="tablesPerRowLabel" style="display: inline-block; width: 30px"></span>
+    <a id="rearrangeLink" href="#" onclick="rearrangeMap();">Rearrange</a>
+</div>
+
+
+<div id="tableMap" style="float: left; background-color: gray">
+    <table id="tableGrid"/>
+</div>
+
+<script src="scripts/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+
+    //TODO: remove hard coded. this should come as input from DB or empty map
+    var jsonString = ' {"rows": 3, "tablesPerRow": 2, ' +
+            ' "tables": [ ' +
+            '	{"id": 1,"row": 1,"col": 1,"text": "5","type": "square","capacity": 4}, ' +
+            '	{"id": 2,"row": 1,"col": 2,"text": "4","type": "rectangle","capacity": 6}, ' +
+            '	{"id": 3,"row": 2,"col": 1,"text": "3","type": "square","capacity": 4}, ' +
+            '	{"id": 4,"row": 2,"col": 2,"text": "2","type": "square","capacity": 2}, ' +
+            '	{"id": 5,"row": 3,"col": 1,"text": "1","type": "round","capacity": 4}, ' +
+            '	{"id": 6,"row": 3,"col": 2,"text": "reception","type": "reception"}] ' +
+            ' } ';
+    var jsonObject = JSON.parse(jsonString);
+    var editable = false;
+
+    //Show map on load
+    toggleMap();
+
+    function toggleMap() {
+
+        var tableMap = $('#tableMap');
+        var tableGrid = $('#tableGrid');
+
+        if (editable) {
+            $('#editCancelLink').text('Cancel');
+            $('#numberOfRowsInput').val(jsonObject.rows);
+            $('#tablesPerRowInput').val(jsonObject.tablesPerRow);
+            $('#rearrangeLink').show();
+            $('#saveLink').show();
+            $('#numberOfRowsInput').show();
+            $('#tablesPerRowInput').show();
+            $('#numberOfRowsLabel').hide();
+            $('#tablesPerRowLabel').hide();
+
+        } else {
+            $('#editCancelLink').text('Edit');
+            $('#numberOfRowsLabel').text(jsonObject.rows);
+            $('#tablesPerRowLabel').text(jsonObject.tablesPerRow);
+            $('#rearrangeLink').hide();
+            $('#saveLink').hide();
+            $('#numberOfRowsInput').hide();
+            $('#tablesPerRowInput').hide();
+            $('#numberOfRowsLabel').show();
+            $('#tablesPerRowLabel').show();
+
+        }
+
+        createMap();
+
+        //Toggle Map
+        if (editable) {
+            editable = false;
+        }else{
+            editable = true;
+        }
+
+    }
+
+    function rearrangeMap(){
+        editable = true;
+        //TODO : logic to add and delete rows
+
+//        var savedRows = jsonObject.rows;
+//        var savedTablesPerRow = jsonObject.tablesPerRow;
+//
+//        var updatedRows = $('#numberOfRowsInput').val();
+//        var updatedTablesPerRow = $('#tablesPerRowInput').val();
+
+
+        createMap();
+    }
+
+    function save(){
+        editable = false;
+
+        //TODO : logic to save - send ajax request to server
+
+        createMap();
+    }
+    function createMap() {
+        var newTableGrid = document.createElement('table');
+        newTableGrid.id = "tableGrid";
+
+        for (var i = 0; i < jsonObject.rows; i++) {
+            var row = newTableGrid.insertRow(i);
+            for (var j = 0; j < jsonObject.tablesPerRow; j++) {
+                var cell = row.insertCell(j);
+                var tableId = (i * jsonObject.tablesPerRow) + j;
+                cell.appendChild(createTable(jsonObject.tables[tableId]));
+                cell.style.textAlign = 'center';
+            }
+        }
+
+        //Replace earlier map with newly built
+        tableMap.replaceChild(newTableGrid, tableGrid);
+    }
+    function createTable(tableJSON) {
+        //alert('Table ' + tableJSON.text);
+        var table = document.createElement('div');
+        table.className = tableJSON.type + 'Table';
+
+        if (editable) {
+
+            var tableType = document.createElement('input');
+            tableType.type = "text";
+            tableType.value = tableJSON.type;
+            tableType.style.width = '25px';
+            var capacity = document.createElement('input');
+            capacity.type = "text";
+            capacity.value = tableJSON.capacity;
+            capacity.style.width = '25px';
+            var displayText = document.createElement('input');
+            displayText.type = "text";
+            displayText.value = tableJSON.text;
+            displayText.style.width = '25px';
+
+            table.appendChild(tableType);
+            table.appendChild(capacity);
+            table.appendChild(displayText);
+        } else {
+            table.innerHTML = '<span>' + tableJSON.text + '</span>';
+        }
+
+        return table;
+
+    }
+
+    function maxLengthCheck(object) {
+        if (object.value.length > object.maxLength)
+            object.value = object.value.slice(0, object.maxLength)
+    }
+
+
+</script>
+
+</body>
+
+
+</html>

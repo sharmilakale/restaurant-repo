@@ -1,0 +1,36 @@
+<form ng-submit="loginVm.getUserByEmailId(loginVm.email);alert('hi');" id="loginForm" name="loginForm" novalidate>
+    <div id="loginDiv" class="divParent">
+
+        <h2>Owner? Please Log In</h2>
+        <p></p>
+        <p>
+            <label for="userName">User Name</label>
+            <input type="email" id="userName" name="userName" ng-model="loginVm.email" ng-value="loginVm.email"  placeholder="email@example.com" minlength="5" maxlength="25" autofocus ng-required="true"/>
+            <div class="errors" ng-messages="loginForm.userName.$error"  ng-if="loginForm.userName.$dirty">
+        <p ng-message="required">User name is required</p>
+        <p ng-message="minlength">User name should have minimum 5 characters</p>
+        <p ng-message="maxlength">Maximum charcters allowed are 25</p>
+    </div>
+    </p>
+
+    <p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ng-model="loginVm.password" value="loginVm.password" ng-required="true" minlength="5" maxlength="20"
+        />
+
+        <div class="errors" ng-messages="loginForm.password.$error"  ng-if="loginForm.password.$dirty">
+    <p ng-message="required">Password is required</p>
+    <p ng-message="minlength">Password should have minimum 5 characters</p>
+    <p ng-message="maxlength">Maximum charcters allowed for password are 20</p>
+
+    </div>
+    </p>
+    <p>
+        <label></label>
+        <button type="submit" class="btn btn-primary">Log In</button>
+        <!--<a id="ownerPageA" ng-href="#/reservations/0"><span class="glyphicon glyphicon-pencil"></span></a>-->
+        <!--&lt;!&ndash;<a id="ownerLink" ng-href="#/ownerPage" class="btn btn-primary"></a>&ndash;&gt;-->
+    </p>
+
+    </div>
+</form>
