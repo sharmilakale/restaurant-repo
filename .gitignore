@@ -2,3 +2,25 @@
 resto-parent/.project
 
 *.prefs
+
+resto-parent/resto-service/.classpath
+
+resto-parent/resto-service/.project
+
+resto-parent/resto-service/.settings/.jsdtscope
+
+resto-parent/resto-service/.settings/org.eclipse.wst.common.component
+
+resto-parent/resto-service/.settings/org.eclipse.wst.common.project.facet.core.xml
+
+resto-parent/resto-service/.settings/org.eclipse.wst.jsdt.ui.superType.container
+
+*.name
+
+resto-parent/resto-web/.classpath
+
+resto-parent/resto-web/.project
+
+resto-parent/resto-web/.settings/.jsdtscope
+
+resto-parent/resto-web/.settings/org.eclipse.wst.common.project.facet.core.xml
