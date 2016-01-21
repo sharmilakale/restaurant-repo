@@ -2,3 +2,17 @@
 resto-parent/.project
 
 *.prefs
+
+resto-parent/resto-service/.classpath
+
+resto-parent/resto-service/.project
+
+resto-parent/resto-service/.settings/.jsdtscope
+
+*.component
+
+resto-parent/resto-service/.settings/org.eclipse.wst.common.project.facet.core.xml
+
+*.container
+
+resto-parent/resto-service/.settings/org.eclipse.wst.jsdt.ui.superType.name
