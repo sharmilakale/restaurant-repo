@@ -1,0 +1,127 @@
+<h2>Reservation details</h2>
+
+<form ng-submit="createReservationVm.saveReservationDetails(createReservationVm.reservationDetails)"
+      name="createReservationForm" novalidate>
+    <p></p>
+    <p>
+
+        <label>Reservation Id: </label>
+        <label class="leftAlign">{{createReservationVm.reservationDetails.id}}</label>
+    </p>
+
+    <p>
+        <label for="reserveDate">Date</label>
+        <input type="date" name="reserveDate" ng-model="createReservationVm.reservationDetails.reserveDate"
+               id="reserveDate" ng-value="{{createReservationVm.reservationDetails.reserveDate |date:yyyy-MM-dd}}"
+               ng-required="true" onclick="disablePastDate(this)"/>
+        <div class="errors" ng-messages="createReservationForm.reserveDate.$error"
+             ng-if="createReservationForm.reserveDate.$dirty">
+    <p ng-message="required">Reservation Date is required</p>
+    </div>
+    </p>
+    <p>
+        <label for="reserveTime">Time</label>
+        <select ng-model="createReservationVm.reservationDetails.reserveTime" name="reserveTime" id="reserveTime"
+                ng-value="createReservationVm.reservationDetails.reserveTime">
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="6:15 PM">6:15 PM</option>
+            <option value="6:30 PM">6:30 PM</option>
+            <option value="6:45 PM">6:45 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+            <option value="7:15 PM">7:15 PM</option>
+            <option value="7:30 PM">7:30 PM</option>
+            <option value="7:45 PM">7:45 PM</option>
+            <option value="8:00 PM">8:00 PM</option>
+            <option value="8:15 PM">8:15 PM</option>
+            <option value="8:30 PM">8:30 PM</option>
+            <option value="8:45 PM">8:45 PM</option>
+            <option value="9:00 PM">9:00 PM</option>
+            <option value="9:15 PM">9:15 PM</option>
+            <option value="9:30 PM">9:30 PM</option>
+        </select>
+   </p>
+
+    <p>
+        <label for="noOfPeople">Number of people</label>
+        <input type="number" ng-model="createReservationVm.reservationDetails.noOfPeople" name="noOfPeople"
+               id="noOfPeople" min="1" max="20" ng-required="true"
+               value="{{createReservationVm.reservationDetails.noOfPeople}}">
+        <div class="errors" ng-messages="createReservationForm.noOfPeople.$error"
+             ng-if="createReservationForm.noOfPeople.$dirty">
+            <p ng-message="required">Number of people is required</p>
+            <p ng-message="min">Number of people cannot be less than 1</p>
+            <p ng-message="max">Number of people cannot be greater than 20</p>
+        </div>
+    </p>
+    <p>
+        <label for="tableNo">Table number</label>
+        <input type="number" id="tableNo" ng-model="createReservationVm.reservationDetails.tableNo"
+               ng-value="createReservationVm.reservationDetails.tableNo" min="1" max="10" ng-disabled="createReservationVm.isOwner === false || createReservationVm.isOwner === undefined">
+        <a ng-href="" class="btn btn-primary">Assign/Change Table</a>
+        <!--<div ng-controller="DialogController"></div>-->
+        <!--<div class="errors" ng-messages="createReservationForm.tableNo.$error"-->
+             <!--ng-if="createReservationForm.tableNo.$dirty">-->
+            <!--<p ng-message="required">Number of people is required</p>-->
+            <!--<p ng-message="min">Number of people cannot be less than 1</p>-->
+            <!--<p ng-message="max">Number of people cannot be greater than 20</p>-->
+        <!--</div>-->
+    </p>
+
+    <p>
+        <label for="status">Reservation status</label>
+        <input type="text" id="status" ng-model="createReservationVm.reservationDetails.status"
+               ng-value="createReservationVm.reservationDetails.status" ng-disabled="true"/>
+    </p>
+    <p>
+        <label for="customerName">Full Name</label>
+        <input type="text" ng-model="createReservationVm.reservationDetails.customerName" name="customerName"
+               id="customerName" pattern="^[a-zA-Z\s]+$" minlength="2" maxlength="25" ng-required
+               ng-value="{{createReservationVm.reservationDetails.customerName}}"/>
+        <div class="errors" ng-messages="createReservationForm.customerName.$error"
+             ng-if="createReservationForm.customerName.$dirty">
+    <p ng-message="required">Name is required</p>
+    <p ng-message="pattern">Name should have only alphabets</p>
+    <p ng-message="minlength">Name should have at least 2 characters</p>
+    <p ng-message="maxlength">Name can have max 25 characters</p>
+    </div>
+    </p>
+    <p>
+        <label for="phone">Phone</label>
+        <input type="tel" ng-model="createReservationVm.reservationDetails.customerPhone" name="phone" id="phone"
+               placeholder="555-555-5555" pattern="\d{3}[\-]\d{3}[\-]\d{4}" ng-required="true"
+               ng-value="{{createReservationVm.reservationDetails.customerPhone}}"/>
+
+        <div class="errors" ng-messages="createReservationForm.phone.$error" ng-if="createReservationForm.phone.$dirty">
+    <p ng-message="required">Phone number is required</p>
+    <p ng-message="pattern">Phone number should be in the format 555-555-5555</p>
+    </div>
+    </p>
+    <p>
+        <label for="customerEmail">Email</label>
+        <input type="email" ng-model="createReservationVm.reservationDetails.customerEmail" name="customerEmail"
+               id="customerEmail" placeholder="email@example.com"
+               ng-value="{{createReservationVm.reservationDetails.customerEmail}}"/>
+
+    </p>
+    <p></p>
+    <p>
+        <label></label>
+        <button type="submit" class="btn btn-primary"
+                ng-disabled="createReservationForm.$pristine || createReservationForm.$invalid">Save Changes
+        </button>
+        <button type="reset" class="btn btn-primary" ng-disabled="createReservationForm.$pristine">Cancel Changes
+        </button>
+        <button type="button"
+                ng-click="createReservationVm.deleteReservationDetails(createReservationVm.reservationDetails.id)"
+                class="btn btn-primary">Delete Reservation
+        </button>
+
+    </p>
+
+    <div>
+        <p ng-if="createReservationVm.successFlag == ''"></p>
+        <p ng-if="createReservationVm.successFlag =='true'" class="infoMsg">{{createReservationVm.infoMsg}}</p>
+        <p ng-if="createReservationVm.successFlag =='false'" class="errMsg">{{createReservationVm.infoMsg}}</p>
+    </div>
+
+</form>

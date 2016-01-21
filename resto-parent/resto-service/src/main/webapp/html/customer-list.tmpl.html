@@ -1,0 +1,28 @@
+<h2>Customer List</h2>
+<input type="search" class="form-control" placeholder="Search text" ng-model="customerListVm.searchTxt">
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th ng-click="customerListVm.sortBy='id'; customerListVm.sortOrder = !customerListVm.sortOrder;">Name</th>
+        <th ng-click="customerListVm.sortBy='reserveDate'; customerListVm.sortOrder = !customerListVm.sortOrder;">Phone</th>
+        <th ng-click="customerListVm.sortBy='reserveTime'; customerListVm.sortOrder = !customerListVm.sortOrder;">Email</th>
+        <th ng-click="customerListVm.sortBy='tableNo'; customerListVm.sortOrder = !customerListVm.sortOrder;">Reservation ID</th>
+        <th ng-click="customerListVm.sortBy='status'; customerListVm.sortOrder = !customerListVm.sortOrder;">Date</th>
+        <th ng-click="customerListVm.sortBy='noOfPeople'; customerListVm.sortOrder = !customerListVm.sortOrder;">Time</th>
+        <th ng-click="customerListVm.sortBy='customerName'; customerListVm.sortOrder = !customerListVm.sortOrder;">No of People</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="customer in customerListVm.customerList | filter:customerListVm.searchTxt | orderBy:customerListVm.sortBy:customerListVm.sortOrder">
+
+        <td>{{customer.customerName}}</td>
+        <td>{{customer.customerPhone}}</td>
+        <td>{{customer.customerEmail}}</td>
+        <td>{{customer.id}}</td>
+        <td>{{customer.reserveDate |date:yyyy-MM-dd}}</td>
+        <td>{{customer.reserveTime}}</td>
+        <td>{{customer.noOfPeople}}</td>
+    </tr>
+    </tbody>
+</table>

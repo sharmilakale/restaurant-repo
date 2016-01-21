@@ -1,0 +1,37 @@
+<h2>Reservation List</h2>
+<input type="search" class="form-control" placeholder="Search text" ng-model="reservationListVm.searchTxt">
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th ng-click="reservationListVm.sortBy='id'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">ID</th>
+        <th ng-click="reservationListVm.sortBy='reserveDate'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Date</th>
+        <th ng-click="reservationListVm.sortBy='reserveTime'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Time</th>
+        <th ng-click="reservationListVm.sortBy='tableNo'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Table #</th>
+        <th ng-click="reservationListVm.sortBy='status'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Status</th>
+        <th ng-click="reservationListVm.sortBy='noOfPeople'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Party size</th>
+        <th ng-click="reservationListVm.sortBy='customerName'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Customer</th>
+        <th ng-click="reservationListVm.sortBy='customerPhone'; reservationListVm.sortOrder = !reservationListVm.sortOrder;">Phone</th>
+        <th ng-click="reservationListVm.sortBy='customerEmail'; usereservationListVmrListVm.sortOrder = !reservationListVm.sortOrder;">Email</th>
+        <th colspan="1">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="reservation in reservationListVm.reservationList | filter:reservationListVm.searchTxt | orderBy:reservationListVm.sortBy:reservationListVm.sortOrder">
+
+        <td>{{reservation.id}}</td>
+        <td>{{reservation.reserveDate |date:yyyy-MM-dd}}</td>
+        <td>{{reservation.reserveTime}}</td>
+        <td>{{reservation.tableNo}}</td>
+        <td>{{reservation.status}}</td>
+        <td>{{reservation.noOfPeople}}</td>
+        <td>{{reservation.customerName}}</td>
+        <td>{{reservation.customerPhone}}</td>
+        <td>{{reservation.customerEmail}}</td>
+        <td><a ng-href="#/reservations/0"><span class="glyphicon glyphicon-pencil"></span></a></td>
+        <!--<td><a ng-href="#/reservations/{{reservation.id}}"><span class="glyphicon glyphicon-trash"></span></a></td>-->
+
+
+    </tr>
+    </tbody>
+</table>

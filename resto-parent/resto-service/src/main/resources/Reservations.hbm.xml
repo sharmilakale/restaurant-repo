@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.egen.rest.domain.Reservation" table="db_restaurant.reservations">
+
+		<id name="id" type="integer">
+			<column name="id"/>
+			<generator class="native"></generator>
+		</id>
+		<property name="reserveDate" type="date">
+			<column name="reserveDate"  not-null="true" />
+		</property>
+		
+		<property name="reserveTime" type="string">
+			<column name="reserveTime" length="25"/>
+		</property>
+		
+		<property name="noOfPeople" type="integer">
+			<column name="noOfPeople" not-null="true" />
+		</property>
+		
+		<property name="status" type="string">
+			<column name="status"  />
+		</property>
+		<property name="tableNo" type="integer">
+			<column name="tableNo"/>
+		</property>
+		<property name="customerName" type="string" not-null="true">
+			<column name="customerName"/>
+		</property>
+		<property name="customerPhone" type="string" not-null="true">
+			<column name="customerPhone"/>
+		</property>
+		<property name="customerEmail" type="string">
+			<column name="customerEmail"/>
+		</property>
+	</class>
+</hibernate-mapping>
