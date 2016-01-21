@@ -1,0 +1,305 @@
+<h2>Profile & Settings</h2>
+<form ng-submit="profileSettingsVm.saveProfileDetails(profileSettingsVm.profileDetails)" name="profileSettingsForm" novalidate>
+    <div id="restaurantProfile" class="divFull">
+    <div>
+        <p>
+            <label for="restoName">Restaurant Name:</label>
+            <input type="text" id="restoName" name="restoName" ng-model="profileSettingsVm.profileDetails.restName" ng-value="profileSettingsVm.profileDetails.restName" min="3" max="30" ng-required="true"/>
+            <div class="errors" ng-messages="profileSettingsForm.restoName.$error" ng-if="profileSettingsForm.restoName.$dirty">
+                <p ng-message="required">Restaurat name is required</p>
+            </div>
+        </p>
+        <p>
+            <label for="tagLineId">Tag Line:</label>
+            <input type="text" id="tagLineId" name="tagLineId" ng-model="profileSettingsVm.profileDetails.tagLine" ng-value="profileSettingsVm.profileDetails.tagLine" max="40">
+        </p>
+        <p style="float: inherit">
+            <label></label>
+            <b><a href="editSeatingMap.html">Edit Seating Map</a></b></h2>
+        </p>
+    </div>
+    <div style="display: inline-block;">
+        <p>
+            <label for="addrLine1">Address line 1</label>
+            <input type="text" id="addrLine1" ng-model="profileSettingsVm.profileDetails.addrLine1" ng-value="profileSettingsVm.profileDetails.addrLine1"  min="3" max="40" ng-required
+                   placeholder="Address Line1" name="addrLine1"/>
+            <div class="errors" ng-messages="profileSettingsForm.addrLine1.$error" ng-if="profileSettingsForm.addrLine1.$dirty">
+                <p ng-message="required">Address Line1 is required</p>
+            </div>
+        </p>
+        <p>
+            <label for="addrLine2">Address Line 2</label>
+            <input type="text" id="addrLine2" name="addrLine2" ng-model="profileSettingsVm.profileDetails.addrLine2" ng-value="profileSettingsVm.profileDetails.addrLine2" min="3" max="40" placeholder="Address Line2"/>
+        </p>
+        <p>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" ng-model="profileSettingsVm.profileDetails.city" ng-value="profileSettingsVm.profileDetails.city"  min="3" max="20" ng-required placeholder="City"/>
+            <div class="errors" ng-messages="profileSettingsForm.city.$error" ng-if="profileSettingsForm.city.$dirty">
+                <p ng-message="required">City is required</p>
+            </div>
+        </p>
+        <p>
+            <label for="state">State</label>
+
+            <select id="state" name="state" ng-required ng-model="profileSettingsVm.profileDetails.state" ng-value="profileSettingsVm.profileDetails.state">
+                <option value=""></option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>
+        </p>
+        <p>
+            <label for="zipCode">Zip code</label>
+            <input type="text" id="zipCode" name="zipCode" ng-model="profileSettingsVm.profileDetails.zipCode" ng-value="profileSettingsVm.profileDetails.zipCode" ng-required placeholder="Zip code"/>
+            <div class="errors" ng-messages="profileSettingsForm.zipCode.$error" ng-if="profileSettingsForm.zipCode.$dirty">
+                <p ng-message="required">Zip code is required</p>
+            </div>
+        </p>
+        <p>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="555-555-5555" pattern="\d{3}[\-]\d{3}[\-]\d{4}"
+                   ng-required ng-model="profileSettingsVm.profileDetails.phone" ng-value="profileSettingsVm.profileDetails.phone"/>
+            <div class="errors" ng-messages="profileSettingsForm.phone.$error" ng-if="profileSettingsForm.phone.$dirty">
+                <p ng-message="required">Phone is required</p>
+                <p ng-message="pattern">Phone should be in format 555-555-5555</p>
+            </div>
+        </p>
+        <p>
+            <label for="emailId">Email:</label>
+            <input type="email" id="emailId" name="emailId" ng-model="profileSettingsVm.profileDetails.email" ng-value="profileSettingsVm.profileDetails.email" ng-required/>
+        </p>
+    </div>
+
+    <div style="display: inline-block; vertical-align: top; margin-left: 100px">
+
+                <table>
+                    <tr style="background: transparent">
+                        <th><span>Open Day</span></th>
+                        <th><span>Start Time</span></th>
+                        <th><span>Close Time</span></th>
+                    </tr>
+                     <tr style="background: transparent">
+                        <td><input type="checkbox" id="mon" name="mon" ng-model="profileSettingsVm.profileDetails.mon" ng-value="profileSettingsVm.profileDetails.mon" ng-checked="profileSettingsVm.profileDetails.mon" style="width:15px"><span>Mon</span>
+                        </td>
+                        <td>
+                            <select>
+                            <option ng-selected="profileSettingsVm.profileDetails.monStart == timeEntry.value"
+                                    ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                    value="{{timeEntry.id}}">
+                                {{timeEntry.value}}
+                            </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                            <option ng-selected="profileSettingsVm.profileDetails.monEnd  == timeEntry.value"
+                                    ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                    ng-value="{{timeEntry.id}}">
+                                {{timeEntry.value}}
+                            </option>
+                            </select>
+                        </td>
+                    </tr>
+
+
+                    <tr style="background: transparent">
+                        <td><input type="checkbox" id="tue" ng-model="profileSettingsVm.profileDetails.tues" ng-value="profileSettingsVm.profileDetails.tues" style="width:15px"/><span>Tue</span>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.tuesStart == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.tuesEnd  == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                    <tr style="background: transparent">
+                        <td><input type="checkbox" id="wed" ng-model="profileSettingsVm.profileDetails.wed" ng-value="profileSettingsVm.profileDetails.wed" style="width:15px"/><span>Wed</span>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.wedStart == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.wedEnd == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="background: transparent">
+                        <td><input type="checkbox" id="thu" ng-model="profileSettingsVm.profileDetails.thur" ng-value="profileSettingsVm.profileDetails.thur" style="width:15px"/><span>Thu</span>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.thurStart == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.thurEnd == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="background: transparent">
+                        <td><input type="checkbox" id="fri" ng-model="profileSettingsVm.profileDetails.fri" ng-value="profileSettingsVm.profileDetails.fri"
+                                   style="width:15px"/><span>Fri</span></td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.friStart == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.friEnd == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="background: transparent">
+                        <td><input type="checkbox" id="sat" ng-model="profileSettingsVm.profileDetails.sat" ng-value="profileSettingsVm.profileDetails.sat" style="width:15px"/><span>Sat</span>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.satStart == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.satEnd == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="background: transparent">
+                        <td><input type="checkbox" id="sun" ng-model="profileSettingsVm.profileDetails.sun" ng-value="profileSettingsVm.profileDetails.sun" style="width:15px"/><span>Sun</span>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.sunStart == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option ng-selected="profileSettingsVm.profileDetails.sunEnd == timeEntry.value"
+                                        ng-repeat="timeEntry in profileSettingsVm.timeOptions"
+                                        ng-value="{{timeEntry.id}}">
+                                    {{timeEntry.value}}
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+
+                </table>
+        </div>
+    <div>
+        <p>
+            <label for="autoAssign">Auto Assign</label>
+            <input type="checkbox" id="autoAssign" ng-model="profileSettingsVm.profileDetails.autoAssign" ng-value="profileSettingsVm.profileDetails.autoAssign">
+        </p>
+        <p>
+            <label></label>
+            <button type="submit" class="btn btn-primary" ng-disabled="profileSettingsForm.$pristine || profileSettingsForm.$invalid">Save Changes</button>
+            <a ng-href="" class="btn btn-primary">Cancel Changes</a>
+        </p>
+        <div>
+            <p ng-if="profileSettingsVm.successFlag == ''"></p>
+            <p ng-if="profileSettingsVm.successFlag =='true'" class="infoMsg">{{profileSettingsVm.infoMsg}}</p>
+            <p ng-if="profileSettingsVm.successFlag =='false'" class="errMsg">{{profileSettingsVm.infoMsg}}</p>
+        </div>
+    </div>
+    </div>
+</form>
+

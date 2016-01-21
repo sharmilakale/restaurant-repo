@@ -1,0 +1,373 @@
+.body{
+    background-image: url("../images/bg.jpg");
+    alignment: center;
+}
+.section{
+    align-content: center;
+}
+.divParent{
+    border: double;
+    border-color: #c8afe2;
+    width: 50%;
+    margin-left: 300px;
+    /*align: center;*/
+}
+.divFull{
+    border: double;
+    border-color: #c8afe2;
+
+}
+.divChildLf{
+    width:600px;
+    float: left;
+}
+.divChildRt{
+    width:600px;
+    float: right;
+}
+label {
+    width:200px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    color: #c8afe2;
+    font-family: "Arial Rounded MT Bold","sans-serif";
+}
+.leftAlign{
+    width:200px;
+    clear:right;
+    text-align:left;
+    padding-right:10px;
+    color: #c8afe2;
+    font-family: "Arial Rounded MT Bold","sans-serif";
+}
+.disabledLinks{
+    color: red;
+}
+.valueLabel{
+    width:200px;
+    clear:left;
+    text-align:left;
+    padding-right:10px;
+    color: #c8afe2;
+    font-family: "Arial Rounded MT Bold","sans-serif";
+}
+input {
+    width:150px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+}
+
+.submitTheme{
+    padding:5px 15px;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 7px;
+    border-radius: 5px;
+    font-family: "Arial Rounded MT Bold","sans-serif";
+    width:200px;
+    text-align: center;
+}
+/*TODO: fallback for font size*/
+h2{
+    font-family: 'Tangerine', "Arial Rounded MT Bold", "sans-serif";
+    font-size: 50px;
+    font-weight: bolder;
+    color: #c8afe2;
+    text-align: center;
+}
+h3{
+    color: #c8afe2;
+    text-align: center;
+}
+p{
+    align-content: center;
+}
+
+.hrs{
+
+    color: white;
+
+}
+.addr{
+    float: left;
+}
+address{
+    color: white;
+}
+.email{
+    color: #2aabd2;
+    font-size: 20px;
+}
+/** Styles for menu**/
+ul li{
+    padding: 5px;
+    margin:1px;
+    width:140px;
+    float:left;
+
+}
+.subUl{
+    background: #c8afe2;
+    list-style:none;
+}
+ul, li ul, li ul li{
+    background: #c8afe2;
+    list-style:none;
+}
+
+.clearFix:after{
+    content:'';
+    clear:both;
+    display:block;
+}
+
+.mainDiv{
+    border: double;
+    border-width: thick;
+}
+
+.logo{
+    font-family: 'Tangerine', serif;
+    font-size:80px;
+    font-weight:800;
+    color: yellowgreen;
+    text-shadow: 4px 4px 4px black;
+    display: inline;
+}
+.fbLink{
+    float: right;
+}
+ul a{
+    color: black;
+}
+.menuFont{
+
+    font-family: 'Abril Fatface', cursive;
+    font-size: 15px;
+    font-weight:100;
+    text-shadow: 2px 2px 2px #aaa;
+}
+.paraClass{
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 20px;
+
+}
+.image{
+    width: 40px;
+    height: 40px;
+}
+.divTop{
+    text-align: center;
+    align-content: center;
+}
+@media (min-width: 320px) {
+    .navbar-nav > li > a {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-nav {
+
+        margin: 0;
+    }
+}
+header {
+    margin: 10px 0;
+}
+
+
+section {
+    min-height: 400px;
+}
+.container>.navbar-collapse, .container>.navbar-header {
+    margin-right: 0;
+
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+    margin-left:-1px;
+    -webkit-border-radius:0 6px 6px 6px;
+    -moz-border-radius:0 6px 6px 6px;
+    border-radius:0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display:block;
+}
+.dropdown-submenu>a:after {
+    display:block;
+    content:" ";
+    float:right;
+    width:0;
+    height:0;
+    border-color:transparent;
+    border-style:solid;
+    border-width:5px 0 5px 5px;
+    border-left-color:#cccccc;
+    margin-top:5px;
+    margin-right:-10px;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color: #ffeddd;
+}
+.dropdown-submenu.pull-left {
+    float:none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left:-100%;
+    margin-left:10px;
+    -webkit-border-radius:6px 0 6px 6px;
+    -moz-border-radius:6px 0 6px 6px;
+    border-radius:6px 0 6px 6px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color:#C8B8E2;
+}
+.tableList{
+    width: 100%;
+    border: solid 2px #0f0f0f;
+}
+tr:nth-child(even) {background: #d2c6e2 }
+tr:nth-child(odd) {background: #FFF}
+
+td{
+    height: 35px;
+}
+.menuUl{
+    margin-left: 100px;
+}
+legend{
+    color: #c8afe2;
+    font-size: 20px;
+}
+span {
+    clear: left;
+    text-align: right;
+    padding-right: 10px;
+    color: #c8afe2;
+    font-family: "Arial Rounded MT Bold","sans-serif";
+}
+.rectangleTable{
+    width:65px;
+    height:100px;
+    /*background-image:repeating-linear-gradient(0deg,darkviolet 30%,violet 40%);*/
+    background-color: violet;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    text-align: center;
+}
+
+.receptionTable{
+    width:100px;
+    height:65px;
+    background-color: violet;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    text-align: center;
+}
+.squareTable{
+    width:75px;
+    height:65px;
+    /*background-image:repeating-linear-gradient(35deg,darkviolet 30%,violet 40%,lightgreen 30%);*/
+    background-color: violet;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.roundTable {
+    width: 70px;
+    height: 70px;
+    background: violet;
+    border: 2px solid black;
+    margin : 20px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+
+}
+.sixSeatVertical{
+    width:65px;
+    height:100px;
+    /*background-image:repeating-linear-gradient(0deg,darkviolet 30%,violet 40%);*/
+    background-color: violet;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    text-align: center;
+}
+.sixSeatHorizontal{
+    width:100px;
+    height:65px;
+    background-color: violet;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    text-align: center;
+}
+.twoSeat{
+    width:75px;
+    height:65px;
+    /*background-image:repeating-linear-gradient(35deg,darkviolet 30%,violet 40%,lightgreen 30%);*/
+    background-color: violet;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.fourSeatCircle {
+    width: 70px;
+    height: 70px;
+    background: violet;
+    border: 2px solid black;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 50%;
+    display: table-cell;
+
+
+}
+
+
+.errors{
+    color:red;
+}
+.infoMsg{
+    color:blue;
+    background-color: #c1e2b3;
+}
+.errMsg{
+    color:red;
+    background-color: #c1e2b3;
+}
+.aBtn{
+    background: #c8e5bc;
+    font-size: large;
+    display: block;
+}
+/*fieldset{*/
+    /*width: 50%;*/
+/*}*/

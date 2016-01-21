@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us</title>
+    <!-- For mobile first approach-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+    <link rel="stylesheet" href="styles/styles.css">
+
+
+</head>
+
+<body class="body">
+
+<div class="divTop">
+    <img class="image" src="images/Grapes-100.png"/>
+    <p class="logo">Draksha Grill</p>
+    <img class="image" src="images/Grapes-100.png"/>
+    <a href="https://www.facebook.com/helpcookinghealthrecipe/" class="fbLink">
+        <img src="images/facebook_Blue_icon.ico" alt="Facebook Link" class="image"/>
+    </a>
+</div>
+
+<div class="mainDiv">
+
+    <nav class="navbar">
+        <div class="container" align="center">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav clearFix menuFont menuUl">
+                    <li><a href="welcome.html">Home</a></li>
+
+                    <li class="dropdown menuFont active">
+                        <a href="#" data-toggle="dropdown">Reservations</a>
+                        <ul class="nav navbar-nav dropdown-menu subUl">
+                            <li class="dropdown"><a id="createReservationA" href="#" data-toggle="dropdown"> Create reservation</a>
+                            </li>
+                            <li class="dropdown"><a id="findReservationA" href="#" data-toggle="dropdown">Find Reservations</a></li>
+                            <li class="dropdown"><a id="reservationListA" href="#" data-toggle="dropdown">Reservation List</a> </li>
+                            <!--<li class="dropdown"><a id="cancelReservationA" href="#" data-toggle="dropdown"> Cancel Reservation</a></li>-->
+                        </ul>
+                    </li>
+
+                    <li><a id="aboutUsA" href="aboutUs.html">About Us</a></li>
+                    <li><a id="contactUsA" href="contactUs.html">Contact Us</a></li>
+                    <li><a id="loginA" href="login.html">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="float: right"><h3><a href="editSeatingMap.html" title="Work in progress...">Edit seating map</a></h3></div>
+    <h2>Seating Map</h2>
+
+    <table align="center" id="seatMap">
+        <tr>
+            <td><div class="twoSeat" id="t1">1</div></td>
+            <td> <div class="twoSeat" id="t2">2</div></td>
+            <td><div class="twoSeat" id="t3">3</div></td>
+        </tr>
+        <tr>
+            <td><div class="sixSeatVertical" id="t4">4</div></td>
+            <td align="center">
+                <div class="fourSeatCircle" id="t5">5</div>
+                <div class="fourSeatCircle" id="t6">6</div></td>
+            <td><div class="sixSeatVertical" id="t7">7</div></td>
+        </tr>
+        <tr>
+            <td><div class="twoSeat" id="t8">8</div></td>
+            <td> <div class="twoSeat" id="t9">9</div></td>
+            <td><div class="twoSeat" id="t10">10</div></td>
+        </tr>
+        <tr></tr>
+
+    </table>
+    <br>
+    <div align="center"><button>Assign Table</button></div>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('table td div').click(function(){
+           //TODO assign table
+        });
+
+    });
+</script>
+<script src="scripts/angular.min.js"></script>
+<script src="scripts/jquery-1.11.3.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/scripts.js"></script>
+
+</body>
+
+</html>
+
+
+
+
